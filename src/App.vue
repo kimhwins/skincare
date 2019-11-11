@@ -1,50 +1,47 @@
+<style src="./style.css">
+</style>
+
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+
 <template>
   <v-app>
     <v-app-bar
-      app
-      color="primary"
-      dark
+      light
     >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+      <v-toolbar-title>Skincare App</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <v-toolbar-items>
+        <v-btn text>
+          <a id="nav-link" href="/">Nav</a>
+        </v-btn>
+        <v-btn text>
+            <router-link id="nav-link" to="/home">Home</router-link>
+        </v-btn>
+        <v-btn text>
+          <router-link id="nav-link" to="/routines">Routines</router-link>
+        </v-btn>
+        <v-btn text>
+          <router-link id="nav-link" to="/shelf">Shelf</router-link>
+        </v-btn>
+      </v-toolbar-items>
     </v-app-bar>
-
-    <v-content>
+    <router-view/>
+<!--     <v-content>
       <HelloWorld/>
-    </v-content>
+    </v-content> -->
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import HelloWorld from './components/HelloWorld.vue';
 
 export default {
   name: 'App',

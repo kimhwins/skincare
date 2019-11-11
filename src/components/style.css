@@ -1,0 +1,89 @@
+*{
+	font-family: CircularStd;
+
+}
+
+h1{
+	font-weight: 500;
+	font-size: 1.65em;
+}
+
+h2{
+	font-weight: 400;
+	font-size: 1.1em;
+	padding-top: 0.5em;
+}
+
+h3{
+	padding-top: 0.5em;
+	font-size: 0.7em !important;
+    font-weight: 400;
+    letter-spacing: 0.1666666667em !important;
+    line-height: 1rem;
+    text-transform: uppercase;
+}
+
+p{
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+.title{
+	padding-bottom: 2em;
+}
+#white{
+	padding: 5em 6em 0 6em;
+		background-color: white;
+		height: 100vh;
+}
+
+.routines{
+	margin-top: 1.5em;
+/*	margin-right: 3em;*/
+	padding: 0.5em 0.5em 3em 0.5em;
+	word-wrap: normal;
+}
+
+.products{
+	margin-top: 1.5em;
+/*	margin-right: 3em;*/
+	padding: 0.5em 0.5em 0.25em 0.5em;
+	word-wrap: normal;
+}
+
+#routine-title{
+	font-size: 1em;
+}
+
+#no-p{
+	padding:0;
+}
+
+#no-pm{
+	padding-bottom:0;
+	margin-bottom: 0;
+}
+
+#product-title{
+	font-size: 1em;
+	font-weight: 300;
+	margin: 0.5em 0 0.75em 0;
+	padding: 0;
+	word-wrap: normal;
+}
+
+#brand-title{
+	font-size: 1em;
+	font-weight: 300;
+	margin: 0.7em 0 -0.1em 0;
+	padding: 0;
+	word-wrap: normal;
+}
+
+
+.basil {
+background-color: white !important;
+}
+.basil--text {
+color: #356859 !important;
+}
