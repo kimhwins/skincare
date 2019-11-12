@@ -112,11 +112,8 @@ data: function() {
 },
 
 firebase: {
-    routines: {
-      source: db.ref('routinesRef'),
-
-    }
-  },
+    routines: routinesRef
+},
   // firebase: function() {
   //   return {
   //       routines: routinesRef
