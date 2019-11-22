@@ -4,6 +4,10 @@ import vuetify from './plugins/vuetify';
 import router from './router'
 import App from './App.vue'
 import "circular-std";
+import 'firebase/firestore'
+import VueFirestore from 'vue-firestore'
+
+Vue.use(VueFirestore)
 
 Vue.config.productionTip = false
 
@@ -11,6 +15,7 @@ new Vue({
   router,
   vuetify,
   Vuefire,
+  VueFirestore,
   data() {
   },
   render: h => h(App)

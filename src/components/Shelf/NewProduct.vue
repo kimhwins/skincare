@@ -79,38 +79,38 @@
 
 <script>
 
-import { db } from '../../config/db.js';
+// import { db } from '../../config/db.js';
 
-let productsRef = db.ref('products')
+// let productsRef = db.ref('products')
 
-export default {
-data () {
-  return {
-    newProduct: {
-      title: 'New Product',
-      description: '',
-      time: '',
-    },
-    products: [],
-  }
-},
-  firebase: function() {
-    return {
-        products: productsRef
-    }
-  },
-    //   firebase: function () {
-    //     return {
-    //         products: db.ref('products')
-    //     }
-    // },
-methods: {
-      addProduct: function () {
-        productsRef.push(this.newProduct);
-        this.newProduct.title = '';
-        this.newProduct.description = '';
-        this.newProduct.time = 'Day';
-      },
-    },
-}
+// export default {
+// data () {
+//   return {
+//     newProduct: {
+//       title: 'New Product',
+//       description: '',
+//       time: '',
+//     },
+//     products: [],
+//   }
+// },
+//   firebase: function() {
+//     return {
+//         products: productsRef
+//     }
+//   },
+//     //   firebase: function () {
+//     //     return {
+//     //         products: db.ref('products')
+//     //     }
+//     // },
+// methods: {
+//       addProduct: function () {
+//         productsRef.push(this.newProduct);
+//         this.newProduct.title = '';
+//         this.newProduct.description = '';
+//         this.newProduct.time = 'Day';
+//       },
+//     },
+// }
 </script>

@@ -20,10 +20,10 @@
 
       <v-toolbar-items>
         <v-btn text>
-          <a id="nav-link" href="/">Nav</a>
+            <router-link id="nav-link" to="/">Home</router-link>
         </v-btn>
         <v-btn text>
-            <router-link id="nav-link" to="/home">Home</router-link>
+          <router-link id="nav-link" to="/discover">Discover</router-link>
         </v-btn>
         <v-btn text>
           <router-link id="nav-link" to="/routines">Routines</router-link>

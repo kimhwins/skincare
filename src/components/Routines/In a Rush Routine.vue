@@ -26,27 +26,52 @@ export default {
         <h2>In a Rush Routine</h2>
         <h3>5 STEPS · 5 MINUTES</h3>
       </div>
-      <v-timeline
-      dense="dense"
-      align-top="alignTop"
-      v-for="card in cards"
-      :key="card.type"
-      >
-      <v-timeline-item
-      small = "small"
-      fill-dot="fillDot"
-      color="#4DB6AC">
-      <h3>{{card.type}}</h3>
-      <h2>{{card.brand}}</h2>
-      <h2 id="subtitle">{{card.name}}</h2>
-    </v-timeline-item>
-  </v-timeline>
 
-  <br/><br/>
-  <v-btn
-  color="#4DB6AC"
-  class="mr-4">
-  <router-link id="link" to="/newstep">Add New Step</router-link>
+      <v-tabs
+      v-model="tab"
+      background-color="transparent"
+      color="#4DB6AC"
+      grow
+      >
+      <v-tab
+      v-for="item in items"
+      :key="item"
+      >
+      {{ item.time }}
+    </v-tab>
+  </v-tabs>
+
+  <v-tabs-items v-model="tab">
+    <v-tab-item
+    v-for="item in items"
+    :key="item"
+    >
+        <br/><br/>
+        <v-timeline
+        dense="dense"
+        align-top="alignTop"
+        v-for="card in cards"
+        :key="card.type"
+        >
+        <v-timeline-item
+        small = "small"
+        fill-dot="fillDot"
+        color="#4DB6AC">
+        <h3>{{card.type}}</h3>
+        <h2>{{card.brand}}</h2>
+        <h2 id="subtitle">{{card.name}}</h2>
+        </v-timeline-item>
+        </v-timeline>
+  </v-tab-item>
+</v-tabs-items>
+
+
+
+<br/><br/>
+<v-btn
+color="#4DB6AC"
+class="mr-4">
+<router-link id="link" to="/newstep">Add New Step</router-link>
 </v-btn>
 </div>
 </v-app>
@@ -55,13 +80,18 @@ export default {
 <script>
 export default {
   data: () => ({
-    cards: [
-    { type: 'Cleanser', brand:'Garnier', name:'Micellar Water',flex: 4 },
-    { type: 'Toner', brand:'Etude House',name:'Soon Jung 5.5 Toner' },
-    { type: 'Essence', brand:'Missha', name:'First Treatment Essence',flex: 4 },
-    { type: 'Moisturizer', brand:'Fresh', name:'Lotus Youth Preserve Cream',flex: 4 },
-    { type: 'Sunscreen', brand:'Too Cool for School', name:'Mild Cica Sun Lotion',flex: 4 },
-    ],
-  }),
+    tab: null,
+    items: [
+    { time: 'Day', text: 'hi',},
+    { time: 'Night', text: 'woah'},
+  ],
+  cards: [
+  { type: 'Cleanser', brand:'Garnier', name:'Micellar Water',flex: 4 },
+  { type: 'Toner', brand:'Etude House',name:'Soon Jung 5.5 Toner' },
+  { type: 'Essence', brand:'Missha', name:'First Treatment Essence',flex: 4 },
+  { type: 'Moisturizer', brand:'Fresh', name:'Lotus Youth Preserve Cream',flex: 4 },
+  { type: 'Sunscreen', brand:'Too Cool for School', name:'Mild Cica Sun Lotion',flex: 4 },
+  ],
+}),
 }
 </script>

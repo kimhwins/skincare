@@ -13,5 +13,5 @@ import "firebase/firestore"
   };
 let app = Firebase.initializeApp(config)
 // let db = app.database()
-export const db = app.database()
-let booksRef = db.ref('books')
+export const db = Firebase.firestore()
+// let booksRef = db.ref('books')

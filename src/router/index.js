@@ -6,7 +6,9 @@ import Routines from '@/components/Routines/Routines.vue'
 import Shelf from '@/components/Shelf/Shelf.vue'
 import InARushRoutine from '@/components/Routines/In a Rush Routine.vue'
 import NewRoutine from '@/components/Routines/NewRoutine.vue'
-import NewProduct from '@/components/Shelf/New Product.vue'
+import NewProduct from '@/components/Shelf/NewProduct.vue'
+import Product from '@/components/Shelf/Product.vue'
+import Discover from '@/components/Discover/Discover.vue'
 
 
 Vue.use(VueRouter)
@@ -18,7 +20,7 @@ const routes = [
       component: HelloWorld
     },
     {
-      path: '/home',
+      path: '/',
       name: 'Home',
       component: Home
     },
@@ -46,6 +48,16 @@ const routes = [
       path: '/newproduct',
       name: 'New Product',
       component: NewProduct
+    },
+    {
+      path: '/discover',
+      name: 'Discover',
+      component: Discover
+    },
+    {
+      path: '/glossierjellycleanser',
+      name: 'Glossier Jelly Cleanser',
+      component: Product
     },
 ]
 
