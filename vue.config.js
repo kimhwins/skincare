@@ -2,6 +2,6 @@ module.exports = {
   "transpileDependencies": [
     "vuetify"
   ],
-  publicPath: "/serve-vue-app",
+  publicPath: "/skincare",
   outputDir: "docs"
 }
