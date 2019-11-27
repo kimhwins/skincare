@@ -2,12 +2,14 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
 import Home from '@/components/home.vue'
+import HomeB from '@/components/homeb.vue'
 import Routines from '@/components/Routines/Routines.vue'
 import Shelf from '@/components/Shelf/Shelf.vue'
 import InARushRoutine from '@/components/Routines/In a Rush Routine.vue'
 import NewRoutine from '@/components/Routines/NewRoutine.vue'
 import NewProduct from '@/components/Shelf/NewProduct.vue'
 import Product from '@/components/Shelf/Product.vue'
+import Wishlist from '@/components/Shelf/Wishlist.vue'
 import Discover from '@/components/Discover/Discover.vue'
 
 
@@ -23,6 +25,11 @@ const routes = [
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/b',
+      name: 'HomeB',
+      component: HomeB
     },
     {
       path: '/routines',
@@ -58,6 +65,11 @@ const routes = [
       path: '/glossierjellycleanser',
       name: 'Glossier Jelly Cleanser',
       component: Product
+    },
+    {
+      path: '/wishlist',
+      name: 'Wishlist',
+      component: Wishlist
     },
 ]
 

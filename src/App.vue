@@ -31,6 +31,9 @@
         <v-btn text>
           <router-link id="nav-link" to="/shelf">Shelf</router-link>
         </v-btn>
+        <v-btn text>
+          <router-link id="nav-link" to="/wishlist">Wishlist</router-link>
+        </v-btn>
       </v-toolbar-items>
     </v-app-bar>
     <router-view/>

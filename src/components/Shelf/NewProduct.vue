@@ -4,113 +4,115 @@
 <template>
   <v-app id="inspire">
     <div id="white">
-        <h1>Add New Product</h1><br/>
-         <v-form v-on:submit.prevent="addProduct">
-          <v-text-field
-            color="#4DB6AC"
-            v-model="newProduct.title"
-            :counter="40"
-            label="Title"
-            id="productTitle"
-            required
-          ></v-text-field>
-          <v-text-field
-            color="#4DB6AC"
-            v-model="newProduct.description"
-            label="Description"
-            id="productDescription"
-            required
-          ></v-text-field>
-
-          <h3>Time of Day</h3>
-          <v-btn-toggle
-          v-model="newProduct.time"
-          tile
-          id="productTime"
-          color="#4DB6AC"
-          group
-        >
-          <v-btn value="Day">
-            Day
-          </v-btn>
-
-          <v-btn value="Night">
-            Night
-          </v-btn>
-        </v-btn-toggle>
-          <br/><br/>
-                <v-btn
+      <h1>Add New Product</h1><br/>
+      <v-form v-on:submit.prevent="addProduct">
+        <v-text-field
         color="#4DB6AC"
-        class="mr-4"
-        type="submit"
-        value="Add Product"
-        id="link"
-      >
-        Add Product
-      </v-btn>
-<!--           <input type="submit" class="btn btn-primary" value="Add Product"> -->
-        </v-form>
-
+        v-model="newProduct.name"
+        :counter="30"
+        maxlength="30"
+        label="Name"
+        id="productName"
+        required
+        ></v-text-field>
+        <v-text-field
+        color="#4DB6AC"
+        v-model="newProduct.brand"
+        :counter="30"
+        maxlength="30"
+        label="Brand"
+        id="productBrand"
+        required
+        ></v-text-field>
+        <v-text-field
+        color="#4DB6AC"
+        v-model="newProduct.image"
+        label="Image URL"
+        id="productImage"
+        required
+        ></v-text-field>
+        <v-select
+          color="#4DB6AC"
+          :items="categories"
+          label="Product Type"
+          id="productType"
+          required
+          v-model="newProduct.type"
+        ></v-select>
 
       <br/><br/>
-      <h2>Product List</h2>
+      <v-btn
+      color="#4DB6AC"
+      class="mr-4"
+      type="submit"
+      value="Add Product"
+      id="link"
+      >
+      Add Product
+    </v-btn>
+    <!--           <input type="submit" class="btn btn-primary" value="Add Product"> -->
+  </v-form>
 
-        <v-simple-table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Description</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="product in products" 
-                :key="product.title">
-              <td><a v-bind:href="product.url">{{product.title}}</a></td>
-              <td>{{product.description}}</td>
-            </tr>
-          </tbody>
-        </v-simple-table>
+</div>
 
-    </div>
-    
 </v-app>
 </template>
 
 <script>
 
-// import { db } from '../../config/db.js';
 
-// let productsRef = db.ref('products')
+// import Firebase from 'firebase'
 
-// export default {
-// data () {
-//   return {
-//     newProduct: {
-//       title: 'New Product',
-//       description: '',
-//       time: '',
-//     },
-//     products: [],
-//   }
-// },
-//   firebase: function() {
-//     return {
-//         products: productsRef
-//     }
-//   },
-//     //   firebase: function () {
-//     //     return {
-//     //         products: db.ref('products')
-//     //     }
-//     // },
-// methods: {
-//       addProduct: function () {
-//         productsRef.push(this.newProduct);
-//         this.newProduct.title = '';
-//         this.newProduct.description = '';
-//         this.newProduct.time = 'Day';
-//       },
-//     },
-// }
+// var firebaseConfig = {
+//   apiKey: "AIzaSyC2SYGnIoTyuK4EdQp1VH9ByZgs0IpE-zQ",
+//   authDomain: "skincare-aa6c8.firebaseapp.com",
+//   databaseURL: "https://skincare-aa6c8.firebaseio.com",
+//   projectId: "skincare-aa6c8",
+//   storageBucket: "skincare-aa6c8.appspot.com",
+//   messagingSenderId: "285880241549",
+//   appId: "1:285880241549:web:89dbd463da6eeaa0bc81c4",
+//   measurementId: "G-LC7NBSVQV7"
+//   };
+// let app = Firebase.initializeApp(firebaseConfig)
+// let db = Firebase.firestore()
+import {db} from '../../config/db.js'
+import _ from 'lodash'
+export default {
+  data: function() {
+    return {
+      newProduct: {
+        name: 'New Product',
+        brand: '',
+        image: '',
+        type:'',
+        timestamp: '',
+        url: '',
+      },
+      products: [],
+      categories: ['Cleanser','Toner','Essence', 'Serum','Emulsion', 'Moisturizer', 'Active', 'Sunscreen','Sleeping Mask'],
+    }
+  },
+
+  firestore() {
+    return {
+    products: db.collection('products')}
+  },
+
+  methods: {
+    addProduct: function () {
+      this.$firestore.products.add({
+        name: this.newProduct.name,
+        brand: this.newProduct.brand,
+        image: this.newProduct.image,
+        type: this.newProduct.type,
+        timestamp: new Date(),
+        url: (this.newProduct.brand + this.newProduct.name).replace(/\s+/g, '').toLowerCase(),
+      })
+      this.newProduct.name = '';
+      this.newProduct.brand = '';
+      this.newProduct.image = '';
+      this.NewProduct.type = '';
+    },
+  },
+}
 </script>

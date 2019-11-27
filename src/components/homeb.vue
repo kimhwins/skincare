@@ -31,20 +31,19 @@ export default {
       <v-container id="no-p" grid-list-md fluid>
         <v-row dense>
           <v-col
-          v-for="routine in routines"
-          :key="routine.title"
-          :cols="4"
+          v-for="card in cards"
+          :key="card.title"
+          :cols="card.flex"
           >
           <v-card
           max-width="90%"
           outlined
           class="routines"
-          :to="'/' + routine.url"
           >
           <v-list-item three-line>
             <v-list-item-content>
-              <v-list-item-title id="routine-title" v-text="routine.title"></v-list-item-title>
-              <div class="overline mb-4" v-text="routine.description"></div>
+              <v-list-item-title id="routine-title" v-text="card.title"></v-list-item-title>
+              <div class="overline mb-4" v-text="card.subtitle"></div>
 
               <v-list-item-subtitle></v-list-item-subtitle>
             </v-list-item-content>
@@ -54,9 +53,6 @@ export default {
         </v-col>
       </v-row>
     </v-container>
-
-
-
 
     <br/><br/><br/>
     <h2>Products for Oily Skin</h2>

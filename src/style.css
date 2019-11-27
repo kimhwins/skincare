@@ -119,6 +119,10 @@ p{
 	display: flex;
 }
 
+#help{
+	margin-left: 0;
+}
+
 .column-1{
 	flex: 25%;
 }
@@ -126,6 +130,10 @@ p{
 .column-2{
 	padding-left: 2em;
 	flex: 75%;
+}
+
+.right-aligned{
+	text-align: right;
 }
 /*.img-container{
 width: 10%;

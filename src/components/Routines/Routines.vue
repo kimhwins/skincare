@@ -22,27 +22,39 @@ export default {
 <template>
   <v-app id="inspire">
     <div id="white">
-      <div class="title">
+             <div class="row" id="help">
+  <div class="column-1">
+    <div class="title">
         <h1>Routines</h1>
-      </div>
+    </div>
+  </div>
+  <div class="column-2 right-aligned">
+        <v-btn
+        color="#4DB6AC"
+        class="mr-4">
+            <router-link id="link" to="/newroutine">Add New Routine</router-link>
+      </v-btn>
+</div>
+</div>
+
               <h2 class="non-title-h2">Your Routines</h2>
       <v-container id="no-p" grid-list-md fluid>
         <v-row dense>
           <v-col
-          v-for="card in yourcards"
-          :key="card.title"
-          :cols="card.flex"
+          v-for="routine in routines"
+          :key="routine.title"
+          :cols="4"
           >
           <v-card
           max-width="90%"
           outlined
           class="routines"
-          :to="'/' + card.url"
+          :to="'/' + routine.url"
           >
           <v-list-item three-line>
             <v-list-item-content>
-              <v-list-item-title id="routine-title" v-text="card.title"></v-list-item-title>
-              <div class="overline mb-4" v-text="card.subtitle"></div>
+              <v-list-item-title id="routine-title" v-text="routine.title"></v-list-item-title>
+              <div class="overline mb-4" v-text="routine.description"></div>
 
               <v-list-item-subtitle></v-list-item-subtitle>
             </v-list-item-content>
@@ -53,16 +65,8 @@ export default {
       </v-row>
     </v-container>
 
-    <br/><br/>
-          <v-btn
-        color="#4DB6AC"
-        class="mr-4">
-            <router-link id="link" to="/newroutine">Add New Routine</router-link>
-      </v-btn>
 
-
-
-    <br/><br/><br/><br/>
+<br/><br/><br/>
     <h2 class="non-title-h2">Saved Routines</h2>
       <v-container id="no-p" grid-list-md fluid>
         <v-row dense>
@@ -101,6 +105,9 @@ export default {
 </template>
 
 <script>
+import {db} from '../../config/db.js'
+import _ from 'lodash'
+
 export default {
   data: () => ({
     yourcards: [
@@ -110,9 +117,11 @@ export default {
     ],
     savedcards: [
         { title: 'Simple Dry Skin Routine', subtitle:'5 STEPS · 10 MINUTES',flex: 4, url:'simpledryskinroutine'},
-    { title: 'Love Yourself Routine', subtitle:'10 STEPS · 45 MINUTES',flex: 4, url:'loveyourselfroutine'},
-    { title: 'In a Rush Routine', subtitle:'3 STEPS · 5 MINUTES', flex: 4, url:'inarushroutine' },
    ]
   }),
+  firestore() {
+    return {
+    routines: db.collection('routines')}
+  },
 }
 </script>

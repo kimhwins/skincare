@@ -9,7 +9,8 @@
         <v-text-field
         color="#4DB6AC"
         v-model="newRoutine.title"
-        :counter="40"
+        :counter="30"
+        maxlength="30"
         label="Title"
         id="routineTitle"
         required
@@ -20,6 +21,8 @@
         label="Description"
         id="routineDescription"
         required
+        :counter="30"
+        maxlength="30"
         ></v-text-field>
 
         <h3>Time of Day</h3>
@@ -53,27 +56,6 @@
     <!--           <input type="submit" class="btn btn-primary" value="Add Routine"> -->
   </v-form>
 
-
-  <br/><br/>
-  <h2>Routine List</h2>
-
-  <v-simple-table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="routine in routines" 
-      :key="routine.title">
-      <td> {{ routine.title }}</td>
-      <td>{{routine.description}}</td>
-    </tr>
-  </tbody>
-</v-simple-table>
-
 </div>
 
 </v-app>
@@ -105,6 +87,8 @@ export default {
         title: 'New Routine',
         description: '',
         time: '',
+        timestamp: '',
+        url: '',
       },
       routines: [],
     }
@@ -120,7 +104,9 @@ export default {
       this.$firestore.routines.add({
         title: this.newRoutine.title,
         description: this.newRoutine.description,
-        time: this.newRoutine.time
+        time: this.newRoutine.time,
+        timestamp: new Date(),
+        url: this.newRoutine.title.replace(/\s+/g, '').toLowerCase(),
       })
       this.newRoutine.title = '';
       this.newRoutine.description = '';
