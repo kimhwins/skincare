@@ -3,7 +3,7 @@
 
 <template>
   <v-app id="inspire">
-    <div id="white">
+    <div class="white">
       <div class="title">
         <h1>Discover</h1>
       </div>

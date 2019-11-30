@@ -14,17 +14,17 @@ export default {
 };
 </script>
 -->
-<style src="./style.css">
+<style src="../style.css">
 </style>
 
 <!-- HOME PAGE -->
 
 <template>
   <v-app id="inspire">
-    <div id="white">
+    <div class="yelloww">
       <div class="title">
-        <h1>Hey Kat!</h1>
-        <h2>Rise & shine</h2>
+        <h1>Hey Kat,</h1>
+        <h2>Rise & shine!</h2>
       </div>
 
       <h2 id="no-pm">Get started</h2>
@@ -40,6 +40,7 @@ export default {
           outlined
           class="routines"
           :to="'/' + routine.url"
+          id="no-border"
           >
           <v-list-item three-line>
             <v-list-item-content>
@@ -54,15 +55,12 @@ export default {
         </v-col>
       </v-row>
     </v-container>
+  </div>
 
-
-
-
-    <br/><br/><br/>
+  <div class="w-white">
+<v-container id="no-p" grid-list-md fluid>
     <h2>Products for Oily Skin</h2>
     <p id="no-pm">Based on your skin type</p>
-
-<v-container id="no-p" grid-list-md fluid>
         <v-row dense>
           <v-col
           v-for="card in oily"
@@ -97,7 +95,6 @@ export default {
       </v-row>
     </v-container>
 <br/><br/>
-
   </div>
 </v-app>
 </template>

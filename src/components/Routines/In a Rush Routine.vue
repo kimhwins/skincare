@@ -21,11 +21,14 @@ export default {
 
 <template>
   <v-app id="inspire">
-    <div id="white">
+    <div class="y-yellow">
       <div class="title">
         <h2>In a Rush Routine</h2>
         <h3>5 STEPS · 5 MINUTES</h3>
       </div>
+    </div>
+
+    <div class="w-white" id="less-top">
 
       <v-tabs
       v-model="tab"
@@ -73,6 +76,7 @@ color="#4DB6AC"
 class="mr-4">
 <router-link id="link" to="/newstep">Add New Step</router-link>
 </v-btn>
+<br/><br/><br/><br/>
 </div>
 </v-app>
 </template>

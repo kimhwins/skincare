@@ -29,18 +29,62 @@ p{
 	margin-bottom: 0;
 }
 
+#transparent{
+	background-color: rgba(255, 255, 255, 0);
+}
+
+.v-app-bar{
+	background-color: rgba(255, 255, 255, 0);
+}
+
 .title{
 	padding-bottom: 2em;
 }
-#white{
-	padding: 5em 6em 0 6em;
-		background-color: white;
+.yelloww{
+	padding: 5em 9rem 3em 9rem;
+		background-color: #FFEDC9;
+		height: auto;
+
+}
+
+.y-yellow{
+	padding: 5em 9rem 0.5em 9rem;
+		background-color: #FFEDC9;
+		height: auto;
+
+}
+
+#less-top{
+	padding-top: 1.5em;
+}
+
+.white{
+		padding: 5em 9rem 0 9rem;
+	background-color: white;
+	height: auto;
+}
+
+.white-full{
+		padding: 5em 9rem 0 9rem;
+	background-color: white;
+	height: 100vh;
+
+}
+
+.w-white{
+		padding: 3em 9rem 0 9rem;
+	background-color: white;
+	height: auto;
+}
+
+#no-border{
+	border-color: white;
 }
 
 .routines{
 	margin-top: 1.5em;
 /*	margin-right: 3em;*/
-	padding: 0.5em 0.5em 3em 0.5em;
+	padding: 0.5em 0.5em 2em 0.5em;
 	word-wrap: normal;
 }
 

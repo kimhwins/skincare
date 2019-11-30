@@ -10,7 +10,7 @@
 <template>
   <v-app>
     <v-app-bar
-      light
+      color = "#FFEDC9"
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 

@@ -3,7 +3,7 @@
 
 <template>
   <v-app id="inspire">
-    <div id="white">
+    <div class="white">
       <h1>Add New Routine</h1><br/>
       <v-form v-on:submit.prevent="addRoutine">
         <v-text-field

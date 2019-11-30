@@ -5,6 +5,7 @@ import Home from '@/components/home.vue'
 import HomeB from '@/components/homeb.vue'
 import Routines from '@/components/Routines/Routines.vue'
 import Shelf from '@/components/Shelf/Shelf.vue'
+import Image from '@/components/Shelf/image.vue'
 import InARushRoutine from '@/components/Routines/In a Rush Routine.vue'
 import NewRoutine from '@/components/Routines/NewRoutine.vue'
 import NewProduct from '@/components/Shelf/NewProduct.vue'
@@ -40,6 +41,11 @@ const routes = [
       path: '/shelf',
       name: 'Shelf',
       component: Shelf
+    },
+    {
+      path: '/image',
+      name: 'Image',
+      component: Image
     },
     {
       path: '/inarushroutine',

@@ -3,14 +3,14 @@
 
 <template>
   <v-app id="inspire">
-    <div id="white">
+    <div class="white-full">
       <h1>Add New Product</h1><br/>
       <v-form v-on:submit.prevent="addProduct">
         <v-text-field
         color="#4DB6AC"
         v-model="newProduct.name"
-        :counter="30"
-        maxlength="30"
+        :counter="50"
+        maxlength="50"
         label="Name"
         id="productName"
         required
@@ -47,6 +47,7 @@
       type="submit"
       value="Add Product"
       id="link"
+      :to="'/' + shelf"
       >
       Add Product
     </v-btn>
@@ -111,7 +112,8 @@ export default {
       this.newProduct.name = '';
       this.newProduct.brand = '';
       this.newProduct.image = '';
-      this.NewProduct.type = '';
+      this.newProduct.type = '';
+      this.picture=null;
     },
   },
 }
