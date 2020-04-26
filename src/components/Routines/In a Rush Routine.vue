@@ -33,14 +33,14 @@ export default {
       <v-tabs
       v-model="tab"
       background-color="transparent"
-      color="#4DB6AC"
+      color="black"
       grow
       >
       <v-tab
       v-for="item in items"
       :key="item"
       >
-      {{ item.time }}
+      <v-icon left>{{item.icon}}</v-icon>{{ item.time }}
     </v-tab>
   </v-tabs>
 
@@ -58,8 +58,8 @@ export default {
         >
         <v-timeline-item
         small = "small"
-        fill-dot="fillDot"
-        color="#4DB6AC">
+
+        color="#FFEDC9">
         <h3>{{card.type}}</h3>
         <h2>{{card.brand}}</h2>
         <h2 id="subtitle">{{card.name}}</h2>
@@ -72,7 +72,7 @@ export default {
 
 <br/><br/>
 <v-btn
-color="#4DB6AC"
+color="black"
 class="mr-4">
 <router-link id="link" to="/newstep">Add New Step</router-link>
 </v-btn>
@@ -86,8 +86,8 @@ export default {
   data: () => ({
     tab: null,
     items: [
-    { time: 'Day', text: 'hi',},
-    { time: 'Night', text: 'woah'},
+    { time: 'Day', icon: 'mdi-weather-sunny',},
+    { time: 'Night', icon: 'mdi-weather-night'},
   ],
   cards: [
   { type: 'Cleanser', brand:'Garnier', name:'Micellar Water',flex: 4 },

@@ -27,7 +27,7 @@ export default {
         <h2>Rise & shine!</h2>
       </div>
 
-      <h2 id="no-pm">Get started</h2>
+      <h2 id="no-pm" class="bolder">Get started</h2>
       <v-container id="no-p" grid-list-md fluid>
         <v-row dense>
           <v-col
@@ -59,7 +59,8 @@ export default {
 
   <div class="w-white">
 <v-container id="no-p" grid-list-md fluid>
-    <h2>Products for Oily Skin</h2>
+    <h2 class="bolder">Change up your routine</h2><br/>
+       <h2>Products for Oily Skin</h2>
     <p id="no-pm">Based on your skin type</p>
         <v-row dense>
           <v-col
@@ -71,6 +72,7 @@ export default {
           max-width="90%"
           outlined
           class="products"
+          :to="'/' + card.url"
           >
 
       <v-img
@@ -111,8 +113,8 @@ export default {
     { title: 'In a Rush Routine', subtitle:'3 STEPS · 5 MINUTES', flex: 4 },
     ],
     oily: [
-    { type: 'Cleanser',brand: 'Glossier',title: 'Jelly Cleanser', subtitle:'$25',flex: 2, src:"https://2.bp.blogspot.com/-NSpChAg5XZg/V8yorZgK75I/AAAAAAAAFl4/ozd4OgEJkkgGRNQAUOl8vFnd5_AddVlzgCLcB/s1600/GlossierMilkyJelly.JPG" },
-    { type:'Toner',brand: 'Skinfood', title: 'Peach Sake Toner', subtitle:'$15',flex: 2, src: 'http://cdn.shopify.com/s/files/1/1247/4607/products/31049_PEACH_SAKE_TONER_1_grande.png?v=1532629586' },
+    { type: 'Cleanser',brand: 'Glossier',title: 'Jelly Cleanser', subtitle:'$25',flex: 2, src:"https://2.bp.blogspot.com/-NSpChAg5XZg/V8yorZgK75I/AAAAAAAAFl4/ozd4OgEJkkgGRNQAUOl8vFnd5_AddVlzgCLcB/s1600/GlossierMilkyJelly.JPG", url: 'glossierjellycleanser' },
+    { type:'Toner',brand: 'Skinfood', title: 'Peach Sake Toner', subtitle:'$15',flex: 2, src: 'http://cdn.shopify.com/s/files/1/1247/4607/products/31049_PEACH_SAKE_TONER_1_grande.png?v=1532629586', url: 'skinfoodpeachsaketoner' },
     { type:'Moisturizer',brand:'Belif',title: 'Aqua Bomb', subtitle:'$35', flex: 2, src:'https://2.bp.blogspot.com/-13ObY2kU75o/XATqkGanCnI/AAAAAAABI8c/Ner--cqmVpwyg5PtZ10H6fCylDm0J2uGgCEwYBhgL/s1600/2018-12-03%2B02.58.21%2B1.jpg' },
     { type:'Sunscreen',brand: 'Farmacy', title: 'Green Defense SPF 30', subtitle:'$36',flex: 2, src: 'https://cdn.shopify.com/s/files/1/2474/1834/files/Farmacy_GreenScreen_FA00692_Shadow_500x.jpg?v=1526392302' },
     ],

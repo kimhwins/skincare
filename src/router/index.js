@@ -5,10 +5,12 @@ import Home from '@/components/home.vue'
 import HomeB from '@/components/homeb.vue'
 import Routines from '@/components/Routines/Routines.vue'
 import Shelf from '@/components/Shelf/Shelf.vue'
+import NewReview from '@/components/Shelf/NewReview.vue'
 import Image from '@/components/Shelf/image.vue'
 import InARushRoutine from '@/components/Routines/In a Rush Routine.vue'
 import NewRoutine from '@/components/Routines/NewRoutine.vue'
 import NewProduct from '@/components/Shelf/NewProduct.vue'
+import Profile from '@/components/Shelf/Profile.vue'
 import Product from '@/components/Shelf/Product.vue'
 import Wishlist from '@/components/Shelf/Wishlist.vue'
 import Discover from '@/components/Discover/Discover.vue'
@@ -76,6 +78,16 @@ const routes = [
       path: '/wishlist',
       name: 'Wishlist',
       component: Wishlist
+    },
+    {
+      path: '/newreview',
+      name: 'New Review',
+      component: NewReview
+    },
+        {
+      path: '/profile',
+      name: 'Profile',
+      component: Profile
     },
 ]
 

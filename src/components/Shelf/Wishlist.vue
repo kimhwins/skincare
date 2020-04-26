@@ -10,7 +10,7 @@
 
       <v-text-field
       v-model="search"
-      color="#4DB6AC"
+      color="black"
         label = "Search"
         placeholder = "Try 'products for dry skin,' 'organic', 'cleansers'..."
         outlined = "outlined"
@@ -26,7 +26,7 @@
           <v-col
           v-for="card in filteredList"
           :key="card.title"
-          :cols="2"
+          :cols="3"
           v-show="card.type == 'Cleanser'" 
           >
           <v-card
@@ -39,7 +39,7 @@
       <v-img
         :src="card.src"
         class="align-end"
-        height="150px"
+        height="200px"
       >
       </v-img>
                 <v-list-item two-line>
@@ -66,7 +66,7 @@
           <v-col
           v-for="card in filteredList"
           :key="card.title"
-          :cols="2"
+          :cols="3"
           v-show="card.type == 'Toner'" 
           >
           <v-card
@@ -79,7 +79,7 @@
       <v-img
         :src="card.src"
         class="align-end"
-        height="150px"
+        height="200px"
       >
       </v-img>
                 <v-list-item two-line>
@@ -107,7 +107,7 @@
           <v-col
           v-for="card in filteredList"
           :key="card.title"
-          :cols="2"
+          :cols="3"
           v-show="card.type == 'Moisturizer'" 
           >
           <v-card
@@ -120,7 +120,7 @@
       <v-img
         :src="card.src"
         class="align-end"
-        height="150px"
+        height="200px"
       >
       </v-img>
                 <v-list-item two-line>
@@ -147,7 +147,7 @@
           <v-col
           v-for="card in filteredList"
           :key="card.title"
-          :cols="2"
+          :cols="3"
           v-show="card.type == 'Sunscreen'" 
           >
           <v-card
@@ -160,7 +160,7 @@
       <v-img
         :src="card.src"
         class="align-end"
-        height="150px"
+        height="200px"
       >
       </v-img>
                 <v-list-item two-line>

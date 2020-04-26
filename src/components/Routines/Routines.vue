@@ -30,7 +30,7 @@ export default {
   </div>
   <div class="column-2 right-aligned">
         <v-btn
-        color="#4DB6AC"
+        color="black"
         class="mr-4">
             <router-link id="link" to="/newroutine">Add New Routine</router-link>
       </v-btn>

@@ -3,11 +3,11 @@
 
 <template>
   <v-app id="inspire">
-    <div class="white">
+    <div class="white-full">
       <h1>Add New Routine</h1><br/>
-      <v-form v-on:submit.prevent="addRoutine">
+      <v-form v-on:submit.prevent="addRoutine" action="/routines">
         <v-text-field
-        color="#4DB6AC"
+        color="black"
         v-model="newRoutine.title"
         :counter="30"
         maxlength="30"
@@ -16,7 +16,7 @@
         required
         ></v-text-field>
         <v-text-field
-        color="#4DB6AC"
+        color="black"
         v-model="newRoutine.description"
         label="Description"
         id="routineDescription"
@@ -30,7 +30,7 @@
         v-model="newRoutine.time"
         tile
         id="routineTime"
-        color="#4DB6AC"
+        color="black"
         group
         >
         <v-btn value="Day">
@@ -45,7 +45,7 @@
       <v-btn depressed
       style="margin-right: 25px;">Add Step</v-btn>
       <v-btn
-      color="#4DB6AC"
+      color="black"
       class="mr-4"
       type="submit"
       value="Add Routine"
@@ -108,6 +108,7 @@ export default {
         timestamp: new Date(),
         url: this.newRoutine.title.replace(/\s+/g, '').toLowerCase(),
       })
+      this.$router.push("/routines");
       this.newRoutine.title = '';
       this.newRoutine.description = '';
       this.newRoutine.time = 'Day';
